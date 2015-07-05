@@ -3,8 +3,8 @@ var drawMap = function() {
 
   var map = L.map('container');
  
-  map.setView([34,-100],4);
-  layer = L.tileLayer('http://{s}.url/{z}/{x}/{y}.png');
+  map.setView([39.8282,-98.5795],4);
+  layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 
   layer.addTo(map);
  
@@ -13,17 +13,23 @@ var drawMap = function() {
  
 };
 
+
+
+var data;
+$.ajax({
+     url:'../data/response.json',
+     type: "get",
+     success: function(dat) {
+       data = dat;
+       data.map(function(d) {
+         var circle = new L.circleMarker([d.lat, d.lng], 
+         200000, {color:'red', opacity:.5}).addTo(map)
+       });
+     }, 
+     dataType:"json"
+}); 
+
 /*
-
-// Function for getting data
-var getData = function() {
-
-  // Execute an AJAX request to get the data in data/response.js
-
-
-  // When your request is successful, call your customBuild function
-
-}
 
 // Do something creative with the data here!  
 var customBuild = function() {
