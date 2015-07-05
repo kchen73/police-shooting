@@ -1,17 +1,19 @@
 // Function to draw your map
-var drawMap() = function() {
+var drawMap = function() {
 
-  // Create map and set viewd
+  var map = L.map('container');
  
+  map.setView([34,-100],4);
+  layer = L.tileLayer('http://{s}.url/{z}/{x}/{y}.png');
 
-  // Create an tile layer variable using the appropriate url
-
-  // Add the layer to your map
+  layer.addTo(map);
  
 
   // Execute your function to get data
  
-}
+};
+
+/*
 
 // Function for getting data
 var getData = function() {
@@ -28,5 +30,12 @@ var customBuild = function() {
 
   
 }
+
+*/
+
+
+
+
+
 
 
