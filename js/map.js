@@ -14,7 +14,7 @@ $.ajax({
 	type: 'get', 
 	success: function(dat) {
 		data = dat
-		var map = L.map('container')
+		var map
 		data.map(function(d) {
 			var circle = new L.circle([d.lat, d.lng], 20000, {color: 'red', opacity: .5}).addTo(map)
 		})
