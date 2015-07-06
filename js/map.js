@@ -13,7 +13,8 @@ $.ajax({
 	url: 'data/response.json', 
 	type: 'get', 
 	success: function(dat) {
-		data = datdata.map(function(d) {
+		data = dat
+		data.map(function(d) {
 			var circle = new L.circle([d.lat, d.lng], 20000, {color: 'red', opacity: .5}).addTo(map)
 		})
 	}, 
