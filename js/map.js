@@ -3,8 +3,11 @@ var drawMap = function() {
 	map.setView([39.8282, -98.5795], 4);
 	var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 	layer.addTo(map);
-
     var data;
+    getData(map);
+}
+
+var getData = function(map) {
     $.ajax({
 	    url: 'data/response.json', 
 	    type: 'get', 
@@ -49,6 +52,7 @@ var drawMap = function() {
 	    dataType: 'json'
     });
 };
+
 
 
 
