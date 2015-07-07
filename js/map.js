@@ -3,13 +3,10 @@ var drawMap = function() {
 	map.setView([39.8282, -98.5795], 4);
 	var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
 	layer.addTo(map);
-<<<<<<< HEAD
 	getData(map)
 }
 
 var getData = function(map) {
-=======
->>>>>>> 29cb4828f4fe2d69148319a284d3f3594a398aa6
     var data;
     getData(map);
 }
